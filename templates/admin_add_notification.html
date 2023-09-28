@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+  <title>WeCare | Palliative </title>
+
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="{{url_for('static',filename='plugins/slick/slick.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='plugins/slick/slick-theme.css')}}">
+    <!-- FancyBox -->
+    <link rel="stylesheet" href="{{url_for('static',filename='plugins/fancybox/jquery.fancybox.min.css')}}">
+
+    <!-- Stylesheets -->
+    <link href="{{url_for('static',filename='css/style.css')}}" rel="stylesheet">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+</head>
+
+
+<body>
+    <style>
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            width: 200%;
+            overflow: auto;
+            z-index: 9999;
+            background: black;
+            box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown-content a {
+            display: block;
+            color: #000000;
+            padding: 5px;
+            text-decoration: none;
+        }
+        
+        .dropdown-content a:hover {
+            color: #FFFFFF;
+            background-color: #00A4BD;
+        }
+    </style>
+    <div class="page-wrapper">
+        <!-- Preloader -->
+        <!-- <div class="preloader"></div> -->
+        <!-- Preloader -->
+
+
+
+        
+
+        <!--Header Upper-->
+        <section class="header-uper">
+            <div class="container clearfix">
+                <div class="logo">
+                    <figure>
+                        <a href="#">
+                            <img src="static/images/logo.png" alt="" width="130">
+                        </a>
+                    </figure>
+                </div>
+                <div class="right-side">
+                     
+                    <div class="link-btn">
+                        <a href="/logout" class="btn-style-one">Logout &nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Header Upper-->
+
+
+        <!--Main Header-->
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="/admin">Home</a>
+                        </li>
+
+                        <li>
+                            <div class="dropdown">
+                                <button style="border: none;background: transparent;color: white;margin: 21px 0px;">Add Functions</button>
+                                <div class="dropdown-content">
+                                    <a href="/admin_add_hospital">Add Hospital</a>
+                                    <a href="/admin_volunteers_reg">Add Volunteer</a>
+                                    <a href="/admin_add_notification">Add Notification</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <button style="border: none;background: transparent;color: white;margin: 21px 0px;">View Functions</button>
+                                <div class="dropdown-content">
+                                    <a href="/admin_view_hospital"> Hospital</a>
+                                    <a href="/admin_view_volunteer"> Volunteer</a>
+                                    <a href="/admin_view_donor"> Donor</a>
+                                    <a href="/admin_view_patient"> user</a>
+                                    <a href="/admin_view_needy_request"> Needy Request</a>
+                                    <a href="/admin_view_accepted_needy_request"> Accepted Needy Request</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="/admin_view_blood_request"> Blood request</a>
+                        </li>
+                        <li>
+                            <a href="/admin_view_complaint_against_doctor">Complaints</a>
+                        </li>
+                        <li>
+                            <a href="/admin_view_feedback">Feedback</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <!--End Main Header -->
+
+        <!--=================================
+=            Page Slider            =
+==================================-->
+
+        <!--====  End of Page Slider  ====-->
+
+        <!-- Contact Section -->
+        <section class="appoinment-section section">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="contact-area">
+                            <div class="section-title">
+                                <h3>Add
+                                    <span>Notification</span>
+                                </h3>
+                            </div>
+                            <form class="default-form contact-form" action="/admin_add_notification" method="post" enctype="multipart/form-data">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+
+                                            <input type="text" name="subject" placeholder="Subject" required>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+
+                                            <input type="date" name="date" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <textarea name="content" id="" cols="30" rows="10" placeholder="Content" required></textarea>
+                                            <!-- <input type="text" name="phone" placeholder="Phone" required="" pattern="[6789][0-9]{9}" required> -->
+                                        </div>
+
+
+
+                                    </div>
+
+
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+
+                                        <div class="form-group text-center">
+                                            <button type="submit" class="btn-style-one">submit now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Contact Section -->
+
+        <!--footer-main-->
+        <footer class="footer-main">
+
+            <div class="footer-bottom">
+                <div class="container clearfix">
+                    <div class="copyright-text">
+                        <p>&copy; Copyright 2018. All Rights Reserved by
+                            <a href="#">Medic</a>
+                        </p>
+                    </div>
+                    <ul class="footer-bottom-link">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!--End footer-main-->
+
+    </div>
+    <!--End pagewrapper-->
+
+
+    <!--Scroll to top-->
+    <div class="scroll-to-top scroll-to-target" data-target=".header-top">
+        <span class="icon fa fa-angle-up"></span>
+    </div>
+
+    <script src="{{url_for('static',filename='plugins/jquery.js')}}"></script>
+    <script src="{{url_for('static',filename='plugins/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static',filename='plugins/bootstrap-select.min.js')}}"></script>
+    <!-- Slick Slider -->
+    <script src="{{url_for('static',filename='plugins/slick/slick.min.js')}}"></script>
+    <!-- FancyBox -->
+    <script src="{{url_for('static',filename='plugins/fancybox/jquery.fancybox.min.js')}}"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+    <script src="{{url_for('static',filename='plugins/google-map/gmap.js')}}"></script>
+
+    <script src="{{url_for('static',filename='plugins/validate.js')}}"></script>
+    <script src="{{url_for('static',filename='plugins/wow.js')}}"></script>
+    <script src="{{url_for('static',filename='plugins/jquery-ui.js')}}"></script>
+    <script src="{{url_for('static',filename='plugins/timePicker.js')}}"></script>
+    <script src="{{url_for('static',filename='js/script.js')}}"></script>
+
+</body>
+
+</html>
